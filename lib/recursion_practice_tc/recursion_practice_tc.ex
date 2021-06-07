@@ -26,4 +26,25 @@ defmodule ElixirInAction.RecursionPracticeTC do
     list = [n | list]
     do_range(n + 1, m, list)
   end
+
+  @spec positive(list) :: list
+  def positive([]), do: []
+
+  def positive(input_list) when is_list(input_list) do
+    do_positive(input_list)
+    |> Enum.reverse()
+  end
+
+  defp do_positive(input_list, output_list \\ [])
+  defp do_positive([], output_list), do: output_list
+
+  defp do_positive(input_list, output_list) do
+    [head | tail] = input_list
+
+    if head > -1 do
+      do_positive(tail, [head | output_list])
+    else
+      do_positive(tail, output_list)
+    end
+  end
 end
