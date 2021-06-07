@@ -1,7 +1,7 @@
 defmodule ElixirInAction.RecursionPracticeTCTest do
   @moduledoc false
   use ExUnit.Case
-  @moduletag :recursion_practice
+  @moduletag :recursion_practice_tc
 
   alias ElixirInAction.RecursionPracticeTC, as: RecursionPractice
 
