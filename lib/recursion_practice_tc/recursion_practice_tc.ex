@@ -10,4 +10,15 @@ defmodule ElixirInAction.RecursionPracticeTC do
     n = n + 1
     do_list_len(tail, n)
   end
-end
+
+    def range(n, m) do
+      do_range(n, m)
+      |> Enum.reverse()
+    end
+    defp do_range(n, m, list \\ [])
+    defp do_range(n, n, list), do: [n | list]
+    defp do_range(n, m, list) do
+      list = [n | list]
+      do_range(n + 1, m, list)
+    end
+  end
